@@ -3,39 +3,37 @@ import './App.css'
 
 import Navbar from "./partials/Navbar"
 import HomeView from "./views/HomeView"
-import MasDetailView from "./views/MasDetailView"
-import MasHomeView from "./views/MasHomeView"
+import UniversView from "./views/UniversView"
+import ProductView from "./views/ProductView"
 
 
 function App() {
 
-  const [currentView, setCurrentView] = useState("HomeView");
 
   const [viewStack, setViewStack] = useState(["HomeView"]);
 
 
-  const navTo = (viewName:string) => {
+  const navTo = (viewName:string, arg:any) => {
     console.log('navto ' + viewName);
-  //setCurrentView(viewName);
 
-  setViewStack(prev => [...prev, viewName]); // copie immuable
+    setViewStack(prev => [...prev, viewName]); // copie immuable
   }
   
   const onCloseView = () => {
     console.log('close view');
-  setViewStack(prev => prev.slice(0, prev.length - 1)); // copie immuable
+    setViewStack(prev => prev.slice(0, prev.length - 1)); // copie immuable
   }
 
   return (
-    <>
+    <div className='app'>
       <div className="stack">
         <HomeView current={true} navTo={navTo}/>
-        <MasDetailView stacked={viewStack.indexOf("MasDetailView") > 0} onClose={onCloseView}/>  
-        <MasHomeView stacked={viewStack.indexOf("MasHomeView") > 0}/>
+        <UniversView stacked={viewStack.indexOf("UniversView") > 0} navTo={navTo} onClose={onCloseView}/>  
+        <ProductView stacked={viewStack.indexOf("ProductView") > 0} onClose={onCloseView}/>  
       </div>
 
       <Navbar/>
-    </>
+    </div>
   )
 }
 

@@ -3,8 +3,8 @@ import './App.css'
 
 import Navbar from "./partials/Navbar"
 import HomeView from "./views/HomeView"
-import MasDetailView from "./views/MasDetailView"
-import MasHomeView from "./views/MasHomeView"
+import MasDetailView from "./views/UniversView"
+import MasHomeView from "./views/ProductView"
 
 
 function App() {

@@ -1,17 +1,21 @@
+.app{
+  overflow: hidden;
+}
+
 .stack{
-  background-color: green;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .view{
   background: white;
   position: absolute;
   top: 0;
-  left: 80%;
+  left: 100%;
   width: 100%;
   height: 100%;
 
@@ -20,7 +24,6 @@
 
 .view.current{
   left: 0;
-  background-color: gray;
 }
 
 .view.stacked{
@@ -37,46 +40,55 @@
 }
 
 
-/*#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+/* local components*/
+
+.carousel{
+  display: flex;
+  overflow: auto;
+  flex-wrap: nowrap;
+  column-gap: 12px;
+  padding: 0 12px 12px 12px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.card-univers{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  width: 48%;
+  cursor: pointer;
+  background-color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-card{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  border-radius: 4px;
+  display: flex;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  width: 230;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.product-card-image{
+  max-height: 140px;
+  height: 140px;
 }
 
-.card {
-  padding: 2em;
+.product-card-image img{
+  object-fit: fill;
 }
 
-.read-the-docs {
-  color: #888;
+.product-card-content{
+  padding: 16px;
+  max-height: 140px;
+  height: 140px;
+  background-color: white;
 }
-*/
+
+
+
